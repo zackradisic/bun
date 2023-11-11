@@ -684,6 +684,8 @@ pub const Loader = enum(u8) {
 
     pub fn shouldCopyForBundling(this: Loader) bool {
         return switch (this) {
+            .wasm,
+            .napi,
             .file,
             // TODO: CSS
             .css,
